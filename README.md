@@ -5,7 +5,8 @@
 |Assignment No.|Assignment Name|State|
 |---|---|---|
 |1|exploring\_word\_vectors|**DONE**|
-|2|word2vec|**DOING**|
+|2|word2vec|**DONE**|
+|3|Dependency Parsing|**TODO**|
 
 
 
