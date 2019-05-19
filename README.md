@@ -13,9 +13,9 @@
 * 该项目模仿了知乎这个网站
 * 使用Spring+Java搭建后端，FreeMarker模板渲染前端，MySQL存储数据
 * 当前进度
-	* DONE：Ch1 ~ Ch5
-	* DOING：Ch6
-	* TODO：Ch7 ~ Ch14
+	* DONE：Ch1 ~ Ch6
+	* DOING：Ch7
+	* TODO：Ch8 ~ Ch14
 
 
 
