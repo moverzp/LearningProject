@@ -14,6 +14,10 @@ public class CommentService {
     @Autowired
     CommentDAO commentDAO;
 
+    public Comment getCommentById(int id) {
+        return commentDAO.getCommentById(id);
+    }
+
 
     public List<Comment> getCommentsByEntity(int entityId, int entityType) {
         return commentDAO.selectByEntity(entityId, entityType);
