@@ -3,6 +3,7 @@ package com.moverzp.wenda.dao;
 import com.moverzp.wenda.model.Comment;
 import com.moverzp.wenda.model.Question;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -16,6 +17,9 @@ public interface CommentDAO {
             ") values (#{userId},#{content},#{createdDate},#{entityId},#{entityType},#{status})"})
     int addComment(Comment comment);
 
+    @Select({"select ", SELECT_FIELDS, " from ", TABLE_NAME, " where id=#{id}"})
+    Comment getCommentById(int id);
+
 
     @Select({"select", SELECT_FIELDS, "from", TABLE_NAME, "where entity_type=#{entityType} " +
             "and entity_id=#{entityId} order by id desc"})
@@ -25,6 +29,7 @@ public interface CommentDAO {
     @Select({"select count(id) from ", TABLE_NAME, " where entity_type=#{entityType} and entity_id=#{entityId}"})
     int getCommentCount(@Param("entityId") int entityId,
                         @Param("entityType") int entityType);
+
     @Update({"update", TABLE_NAME, "set status=#{status} where entity_type=#{entityType} and entity_id=#{entityId}"})
     void updateStatus(@Param("entityId") int entityId,
                       @Param("entityType") int entityType,
