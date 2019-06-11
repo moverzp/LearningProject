@@ -22,6 +22,9 @@ public interface QuestionDAO {
                                          @Param("offset") int offset,
                                          @Param("limit") int limit);
 
+    @Update({"update ", TABLE_NAME, " set comment_count = #{commentCount} where id=#{id}"})
+    int updateCommentCount(@Param("id") int id, @Param("commentCount") int commentCount);
+
 //    @Update({"update", TABLE_NAME, "set password=#{password} where id = #{id}"})
 //    void updatePassword(Question user);
 //
